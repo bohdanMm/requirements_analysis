@@ -16,4 +16,11 @@ public class MainUserService {
                 .build();
 
     }
+
+    public MainUserResponse login(MainUserLogin mainUserLogin) {
+        MainUser user = userRepository.findByEmailAndPassword(mainUserLogin.getEmail(), mainUserLogin.getPassword())
+                .orElseThrow(() -> new NoSuchElementException("User with such credentials not found!"));
+        return userMapper.toResponseDto(user);
+    }
+
 }
