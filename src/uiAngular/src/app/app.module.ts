@@ -15,6 +15,7 @@ import { UserQuestionListComponent } from './userModule/user-question-list/user-
 import { UserWorkPageComponent } from './userModule/user-work-page/user-work-page.component';
 import { HeaderComponent } from './header/header.component';
 import {RouterModule} from '@angular/router';
+import { AdminHeaderComponent } from './admin-header/admin-header.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import {RouterModule} from '@angular/router';
     UserProfileComponent,
     UserQuestionListComponent,
     UserWorkPageComponent,
-    HeaderComponent
+    HeaderComponent,
+    AdminHeaderComponent
   ],
   imports: [
     BrowserModule,
