@@ -1,9 +1,17 @@
 package nulp.architecture.service;
 
+import lombok.RequiredArgsConstructor;
 import nulp.architecture.domain.MainUser;
 import nulp.architecture.domain.builder.MainUserBuilder;
+import nulp.architecture.domain.dto.MainUserLogin;
 import nulp.architecture.domain.dto.MainUserRequest;
+import nulp.architecture.domain.dto.MainUserResponse;
+import nulp.architecture.mapper.UserMapper;
+import nulp.architecture.repository.UserRepository;
 import org.springframework.stereotype.Service;
+
+import java.util.NoSuchElementException;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
