@@ -1,14 +1,23 @@
 spring:
   datasource:
-    driver-class-name: org.postgresql.Driver
-    url: postgresql://localhost:5432/architecture
-    username: ${USERNAME}
-    password: ${PASSWORD}
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:postgresql://localhost:5432/architecture
+    username: postgres
+    password: postgres
+    hikari:
+      poolName: Hikari
+      auto-commit: false
+      data-source-properties:
+        cachePrepStmts: true
+        prepStmtCacheSize: 250
+        prepStmtCacheSqlLimit: 2048
+        useServerPrepStmts: true
   jpa:
-    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    database-platform: org.hibernate.dialect.PostgreSQL9Dialect
     show-sql: true
+    generate-ddl: true
     hibernate:
-      ddl-auto: update
+      ddl-auto: create-drop
   main:
     allow-bean-definition-overriding: true
 
