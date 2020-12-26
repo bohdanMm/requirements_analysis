@@ -1,0 +1,48 @@
+@import "../../../assets/colors"
+
+.container
+  height: 100vh
+  background-color: $user-main-background-color
+  font-family: 'Montserrat'
+  font-weight: 500
+
+.content
+  display: flex
+  flex-direction: column
+  justify-content: space-around
+  padding: 0 15%
+
+.first-row, .second-row
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+
+.first-row
+  margin-top: 6vh
+  margin-bottom: 5vh
+
+.card
+  border: 1px solid transparent
+  background-color: $user-cards-color
+  width: 32%
+  text-align: center
+  padding-bottom: 35px
+  img
+    margin-top: 35px
+  h3
+    margin-top: 15px
+    color: $white-color
+  p
+    margin-top: 15px
+    color: $user-cards-text-color
+    margin-bottom: 15px
+    padding: 0 20%
+  a
+    margin-top: 15px
+    color: $link-cards-color
+    text-decoration: none
+
+.card:hover
+  cursor: pointer
+  border: 1px solid $header-text-color
+

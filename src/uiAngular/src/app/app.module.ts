@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthComponent } from './auth/auth.component';
@@ -13,6 +14,7 @@ import { UserProfileComponent } from './userModule/user-profile/user-profile.com
 import { UserQuestionListComponent } from './userModule/user-question-list/user-question-list.component';
 import { UserWorkPageComponent } from './userModule/user-work-page/user-work-page.component';
 import { HeaderComponent } from './header/header.component';
+import {RouterModule} from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import { HeaderComponent } from './header/header.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
