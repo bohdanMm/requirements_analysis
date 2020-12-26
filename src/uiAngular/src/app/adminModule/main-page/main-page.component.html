@@ -1,2 +1,47 @@
-<app-admin-header></app-admin-header>
-<p>main-page works!</p>
+<div class="container">
+  <app-admin-header></app-admin-header>
+  <img class="first-bubble" src="../../../assets/images/bubbles.svg" alt="">
+  <img class="second-bubble" src="../../../assets/images/left-bubles.svg" alt="">
+  <div class="content">
+    <div class="first-row">
+      <div class="card" (click)="goToAdminQuestionList()">
+        <img src="../../../assets/images/icon.svg" alt="">
+        <h3>Аналіз вимог</h3>
+        <p>Протестуй свої навички за допомогою нашого тесту </p>
+        <a routerLink="/aquestions">Вперед</a>
+      </div>
+      <div class="card">
+        <img src="../../../assets/images/icon.svg" alt="">
+        <h3>Проектування</h3>
+        <p>Протестуй свої навички за допомогою нашого тесту </p>
+        <a routerLink="/amain">Вперед</a>
+      </div>
+      <div class="card">
+        <img src="../../../assets/images/icon.svg" alt="">
+        <h3>Кодування</h3>
+        <p>Протестуй свої навички за допомогою нашого тесту </p>
+        <a routerLink="/amain">Вперед</a>
+      </div>
+    </div>
+    <div class="second-row">
+      <div class="card">
+        <img src="../../../assets/images/icon.svg" alt="">
+        <h3>Тестування</h3>
+        <p>Протестуй свої навички за допомогою нашого тесту </p>
+        <a routerLink="/amain">Вперед</a>
+      </div>
+      <div class="card">
+        <img src="../../../assets/images/icon.svg" alt="">
+        <h3>Дизайн</h3>
+        <p>Протестуй свої навички за допомогою нашого тесту </p>
+        <a routerLink="/amain">Вперед</a>
+      </div>
+      <div class="card">
+        <img src="../../../assets/images/icon.svg" alt="">
+        <h3>Інтегрування</h3>
+        <p>Протестуй свої навички за допомогою нашого тесту </p>
+        <a routerLink="/amain">Вперед</a>
+      </div>
+    </div>
+  </div>
+</div>
