@@ -1,0 +1,115 @@
+@import "../../../assets/colors"
+*
+  box-sizing: border-box
+  margin: 0
+  font-family: Montserrat
+
+.container
+  width: 100%
+  height: calc(100vh - 64px)
+  position: relative
+  background-color: $admin-cards-color
+
+.triangle
+  width: 95%
+  height: 350px
+  display: flex
+  flex-direction: row
+
+.trapezoid1
+  width: 45%
+  height: 350px
+  background-color: $admin-main-background-color
+  position: relative
+
+.img-admin
+  width: 240px
+  height: 130px
+  background: url("../../../assets/images/admin_photo.jpg") no-repeat center
+  background-size: contain
+  float: right
+  margin: 5% 5% 0 0
+
+.triangle2
+  width: 0
+  height: 0
+  border-top: 280px solid $admin-main-background-color
+  border-right: 51rem solid transparent
+  position: absolute
+  top: 350px
+  left: 0
+
+.admin-triangle
+  width: 0
+  height: 0
+  border-top: 350px solid $icon-color
+  border-right: 63rem solid transparent
+
+.admin-data
+  width: 55%
+  color: $header-color
+  padding-top: 2%
+  position: absolute
+  left: 44%
+
+.admin-data h3
+  font-size: 20px
+  font-weight: 600
+  margin-bottom: 3%
+
+.admin-data p
+  font-size: 16px
+  margin-bottom: 2%
+
+.admin-data button
+  font-size: 16px
+  color: $header-color
+  background-color: $icon-color
+  border-radius: 5px
+  border: 1px solid $admin-profile-color
+  padding: 1% 4%
+  outline: none
+
+.admin-data button:hover
+  cursor: pointer
+  background-color: $admin-main-background-color
+
+.exit-btn
+  position: absolute
+  top: 8%
+  right: 28%
+
+.edit-btn
+  margin-top: 2%
+
+.bubbles
+  width: 50%
+  height: 70%
+  background: url("../../../assets/images/bubbles_rotated.png") no-repeat
+  background-size: contain
+  position: absolute
+  left: 10%
+  bottom: 1%
+  z-index: 10
+
+.statistics
+  background-color: $icon-color
+  color: $header-color
+  font-style: italic
+  font-weight: 600
+  padding: 2% 3%
+  position: absolute
+  bottom: 15%
+  right: 15%
+
+.statistics h3
+  font-size: 20px
+  margin-bottom: 50px
+
+.grid
+  padding-left: 10%
+  display: grid
+  grid-template-rows: repeat(4, 30px)
+  grid-template-columns: 310px 10px
+  grid-gap: 20px
+  align-content: center
