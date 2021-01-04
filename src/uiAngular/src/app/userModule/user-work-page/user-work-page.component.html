@@ -1,2 +1,58 @@
-<app-header></app-header>
-<p>user-work-page works!</p>
+<div class="container">
+  <app-header></app-header>
+  <div class="container3">
+    <div class="vars">
+      <h3>Варіанти відповідей</h3>
+
+      <div class="vars-container">
+          <div class="list"
+               cdkDropList
+               #varList="cdkDropList"
+               [cdkDropListData]="variables"
+               [cdkDropListConnectedTo]="[resultList]"
+               (cdkDropListDropped)="onDrop($event)">
+            <div class="varItem" *ngFor="let el of variables" cdkDrag>
+                <p>{{el}}</p>
+            </div>
+          </div>
+      </div>
+    </div>
+    <div class="container2">
+      <div class="task-container">
+        <h3>Завдання</h3>
+        <p class="task"></p>
+      </div>
+
+      <div class="results">
+        <div class="res-box">
+          <div class="resText">
+            <p>Ваша відповідь</p>
+            <div>
+              <p>Таймер</p>
+              <countdown #myTimer [config]="{leftTime: 300, format: 'mm:ss'} " (event)="onTimerFinished($event)"></countdown>
+            </div>
+          </div>
+
+          <div class="res-container">
+            <div class="list resList"
+                 cdkDropList
+                 #resultList="cdkDropList"
+                 [cdkDropListData]="results"
+                 [cdkDropListConnectedTo]="[varList]"
+                 (cdkDropListDropped)="onDrop($event)">
+              <div class="varItem resItem" *ngFor="let el of results" cdkDrag>
+                <p>{{el}}</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="buttons">
+            <button (click)="clearRes()">Очистити</button>
+            <button (click)="sendRes(myTimer.left)">Завершити</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

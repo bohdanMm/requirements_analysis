@@ -1,0 +1,96 @@
+@import "../../../assets/colors"
+
+.container
+  height: 100vh
+  font-family: 'Montserrat'
+  font-weight: 500
+  color: $white-color
+  .container3
+    display: flex
+    height: calc(100vh - 60px)
+    .vars
+      width: 30%
+      background-color: $auth-div-data-background-color
+      h3
+        margin: 5% auto
+        text-align: center
+        font-weight: 500
+        font-size: 1.5em
+    .container2
+      width: 70%
+      height: calc(100vh - 60px)
+      .task-container
+        height: 28%
+        background-color: $user-cards-color
+        h3
+          padding-top: 2%
+          padding-left: 3%
+          font-weight: 500
+          font-size: 1.5em
+        .task
+          width: 70%
+          margin: 0 auto
+          color: $white-color
+          font-size: 1em
+          opacity: 0.8
+      .results
+        height: 72%
+        background-color: $user-main-background-color
+
+  .varItem
+    background-color: $header-text-color
+    margin: 1.5% 5%
+    display: table
+    font-size: 1.2em
+    padding: 1.5% 3%
+    border-radius: 7px
+
+  .res-box
+    width: 60%
+    margin: auto
+    .resText
+      color: $white-color
+
+  .resList
+    min-height: 200px
+    border: 3px solid $user-work-border-color
+    border-radius: 10px
+
+  .resItem
+    display: inline-block
+
+  .resText
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    padding: 5% 0
+    >p
+      font-size: 1.3em
+    div
+      width: 20%
+      display: flex
+      flex-direction: row
+      justify-content: space-between
+      countdown
+        font-weight: 600
+
+  .buttons
+    margin-top: 3%
+    text-align: right
+    button
+      font-size: 1.1em
+      font-weight: 500
+      color: $white-color
+      background-color: $auth-button-background-color
+      border-radius: 7px
+      padding: 1.5% 7%
+      margin-left: 2%
+      margin-right: 1%
+      outline: none
+      border: none
+      &:hover
+        background-color: $user-work-btn-background
+    button:first-of-type
+      background-color: $header-text-color
+      &:hover
+        background-color: $user-work-button-background

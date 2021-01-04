@@ -16,6 +16,8 @@ import { UserWorkPageComponent } from './userModule/user-work-page/user-work-pag
 import { HeaderComponent } from './header/header.component';
 import {RouterModule} from '@angular/router';
 import { AdminHeaderComponent } from './admin-header/admin-header.component';
+import {DragDropModule} from '@angular/cdk/drag-drop';
+import {CountdownModule} from 'ngx-countdown';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { AdminHeaderComponent } from './admin-header/admin-header.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule
+    RouterModule,
+    DragDropModule,
+    CountdownModule
   ],
   providers: [],
   bootstrap: [AppComponent]
