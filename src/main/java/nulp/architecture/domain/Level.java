@@ -4,11 +4,9 @@ import lombok.Getter;
 import lombok.Setter;
 import nulp.architecture.enums.Difficulty;
 
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import java.time.Duration;
+import java.util.List;
 
 @Getter
 @Setter
@@ -22,4 +20,7 @@ public class Level extends IdHolder {
 
     @ManyToOne
     private MainUser creator;
+
+    @OneToMany(mappedBy = "level", cascade = {CascadeType.MERGE, CascadeType.PERSIST}, orphanRemoval = true)
+    private List<Task> tasks;
 }

@@ -3,9 +3,7 @@ package nulp.architecture.domain;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 import java.util.List;
 
 @Getter
@@ -18,6 +16,9 @@ public class Task extends IdHolder {
     @OneToOne
     private Sample sample;
 
-    @OneToMany(mappedBy = "task")
+    @ManyToOne
+    private Level level;
+
+    @OneToMany(mappedBy = "task", cascade = {CascadeType.MERGE, CascadeType.PERSIST}, orphanRemoval = true)
     private List<AnswerOption> answers;
 }

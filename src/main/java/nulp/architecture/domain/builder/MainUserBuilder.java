@@ -18,6 +18,11 @@ public class MainUserBuilder {
         return thisBuilder;
     }
 
+    public MainUserBuilder fullName(String fullName) {
+        mainUser.setFullName(fullName);
+        return thisBuilder;
+    }
+
     public MainUserBuilder password(String password) {
         mainUser.setPassword(password);
         return thisBuilder;
