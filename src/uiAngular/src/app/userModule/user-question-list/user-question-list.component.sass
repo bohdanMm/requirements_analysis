@@ -1,0 +1,55 @@
+@import "../../../assets/colors"
+
+.container
+  min-height: 100vh
+  background-color: $user-main-background-color
+  font-family: 'Montserrat'
+  font-weight: 500
+
+.first-bubble
+  width: 500px
+  height: auto
+  position: fixed
+  right: 0px
+  bottom: 0px
+  z-index: 1
+
+.second-bubble
+  position: fixed
+  width: 500px
+  height: auto
+  z-index: 1
+
+.content
+  width: 65%
+  margin: 0 auto
+  color: $white-color
+  padding-bottom: 1%
+  h2
+    padding: 10% 0 5% 5%
+    font-weight: 600
+
+.task
+  min-height: 100px
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+  background-color: $user-cards-color
+  border-radius: 7px
+  margin-bottom: 5%
+  padding: 4% 7%
+  .task-text
+    width: 80%
+    h3
+      font-weight: 600
+      margin-bottom: 3%
+    p
+      opacity: 0.8
+      font-size: 1.1em
+  img
+    width: 50px
+    height: 50px
+
+.task:hover
+  cursor: pointer
+  border: 1px solid $header-text-color

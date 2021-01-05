@@ -1,2 +1,45 @@
 <app-admin-header></app-admin-header>
-<p>admin-question-list works!</p>
+<div class="container">
+    <img class="first-bubble" src="../../../assets/images/bubbles.svg" alt="">
+    <img class="second-bubble" src="../../../assets/images/left-bubles.svg" alt="">
+    <div class="content">
+        <div class="content-text">
+            <h2>Перелік завдань</h2>
+            <button class="add-task">Додати нове завдання</button>
+        </div>
+        <div class="tasks-box">
+            <div class="task">
+                <div class="task-text">
+                    <h3>Завдання_1</h3>
+                    <p>Протестуй свої навички за допомогою нашого тесту </p>
+                </div>
+                <div class="icons">
+                    <img (click)="goToAdminWorkPage()" src="../../../assets/images/edit.png" alt="">
+                    <img src="../../../assets/images/delete.png" alt="">
+                </div>
+            </div>
+            <div class="task">
+                <div class="task-text">
+                    <h3>Завдання_2</h3>
+                    <p>Протестуй свої навички за допомогою нашого тесту </p>
+                </div>
+                <div class="icons">
+                    <img (click)="goToAdminWorkPage()" src="../../../assets/images/edit.png" alt="">
+                    <img src="../../../assets/images/delete.png" alt="">
+                </div>
+            </div>
+            <div class="task">
+                <div class="task-text">
+                    <h3>Завдання_3</h3>
+                    <p>Протестуй свої навички за допомогою нашого тесту </p>
+                </div>
+                <div class="icons">
+                    <img (click)="goToAdminWorkPage()" src="../../../assets/images/edit.png" alt="">
+                    <img src="../../../assets/images/delete.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

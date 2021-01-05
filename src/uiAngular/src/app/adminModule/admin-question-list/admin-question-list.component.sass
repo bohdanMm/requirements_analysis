@@ -1,0 +1,77 @@
+@import "../../../assets/colors"
+
+.container
+  min-height: 100vh
+  background-color: $admin-main-background-color
+  font-family: 'Montserrat'
+  font-weight: 500
+
+.first-bubble
+  width: 500px
+  height: auto
+  position: fixed
+  right: 0px
+  bottom: 0px
+  z-index: 1
+
+.second-bubble
+  position: fixed
+  width: 500px
+  height: auto
+  z-index: 1
+
+.content
+  width: 65%
+  margin: 0 auto
+  color: $white-color
+  padding-bottom: 1%
+  .content-text
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    padding: 10% 5% 5%
+    h2
+      font-weight: 600
+    button
+      height: auto
+      color: $white-color
+      font-size: 1.1em
+      background-color: $icon-color
+      padding: 1% 5%
+      border-radius: 7px
+      outline: none
+      border: none
+      &:hover
+        cursor: pointer
+        background-color: $user-profile-background-color
+
+.task
+  min-height: 100px
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+  background-color: $admin-cards-color
+  border-radius: 7px
+  margin-bottom: 5%
+  padding: 4% 7%
+  .task-text
+    width: 80%
+    h3
+      font-weight: 600
+      margin-bottom: 3%
+    p
+      opacity: 0.8
+      font-size: 1.1em
+  .icons
+    width: 15%
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    img
+      width: 45px
+      height: 44px
+      &:last-of-type
+        width: 40px
+      &:hover
+        cursor: pointer
+        opacity: 0.7
