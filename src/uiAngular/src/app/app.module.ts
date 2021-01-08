@@ -18,6 +18,8 @@ import {RouterModule} from '@angular/router';
 import { AdminHeaderComponent } from './admin-header/admin-header.component';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import {CountdownModule} from 'ngx-countdown';
+import {ModalModule} from 'ngx-bootstrap/modal';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,9 @@ import {CountdownModule} from 'ngx-countdown';
     AppRoutingModule,
     RouterModule,
     DragDropModule,
-    CountdownModule
+    CountdownModule,
+    ModalModule.forRoot(),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

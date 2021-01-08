@@ -1,33 +1,23 @@
 <app-header></app-header>
-<div class="container">
+<div class="containerMy">
     <img class="first-bubble" src="../../../assets/images/bubbles.svg" alt="">
     <img class="second-bubble" src="../../../assets/images/left-bubles.svg" alt="">
     <div class="content">
         <h2>Перелік завдань</h2>
-        <div class="tasks-box">
-            <div class="task" (click)="goToUserWorkPage()">
+        <div class="tasks-box" *ngFor="let el of questionList">
+            <div class="task" (click)="goToUserWorkPage(el.questionId)">
                 <div class="task-text">
-                    <h3>Завдання_1</h3>
+                    <h3>Завдання:   {{el.questionName}}</h3>
                     <p>Протестуй свої навички за допомогою нашого тесту </p>
                 </div>
-                <img src="../../../assets/images/done-task.png" alt="">
-            </div>
-            <div class="task" (click)="goToUserWorkPage()">
-                <div class="task-text">
-                    <h3>Завдання_2</h3>
-                    <p>Протестуй свої навички за допомогою нашого тесту </p>
-                </div>
-                <img src="../../../assets/images/done-task.png" alt="">
-            </div>
-            <div class="task" (click)="goToUserWorkPage()">
-                <div class="task-text">
-                    <h3>Завдання_3</h3>
-                    <p>Протестуй свої навички за допомогою нашого тесту </p>
-                </div>
-                <img src="../../../assets/images/expected-taks.png" alt="">
+                <img src="../../../assets/images/expected-taks.png" alt="" *ngIf="!el.isDone">
+                <img src="../../../assets/images/done-task.png" alt="" *ngIf="el.isDone">
             </div>
         </div>
     </div>
 </div>
 
+
+<!--<img src="../../../assets/images/expected-taks.png" alt="">-->
+<!--<img src="../../../assets/images/done-task.png" alt="">-->
 

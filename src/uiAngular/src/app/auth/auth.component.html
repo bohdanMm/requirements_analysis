@@ -13,17 +13,17 @@
         <div class="bg-img"></div>
         <div class="data">
             <h1>Вхід у ваш <br>профіль</h1>
-            <form action="">
+            <div class="formOur">
                 <label for="email">Електронна пошта</label>
                 <br>
-                <input type="text" id="email" placeholder="Email Address">
+                <input type="text" id="email" placeholder="Email Address" [(ngModel)]="login">
                 <br>
                 <label for="password">Пароль</label>
                 <br>
-                <input type="password" id="password">
+                <input type="password" id="password" [(ngModel)]="pass">
                 <br>
-                <button type="submit" class="submit">Увійти</button>
-            </form>
+                <button type="submit" class="submit" (click)="loginToSystem()">Увійти</button>
+            </div>
         </div>
     </div>
 </body>
