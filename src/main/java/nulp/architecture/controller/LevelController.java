@@ -1,12 +1,14 @@
 package nulp.architecture.controller;
 
 import lombok.RequiredArgsConstructor;
+import nulp.architecture.domain.Level;
+import nulp.architecture.domain.dto.LevelAnswerDto;
 import nulp.architecture.domain.dto.LevelCreationDto;
 import nulp.architecture.service.LevelService;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RequiredArgsConstructor
 @Controller
@@ -18,5 +20,20 @@ public class LevelController {
     @PostMapping("create")
     public void createLevel(@RequestBody LevelCreationDto levelCreationDto){
         levelService.create(levelCreationDto);
+    }
+
+    @GetMapping
+    public List<Level> getAllLevels(){
+        return levelService.getLevels();
+    }
+
+    @GetMapping("{id}")
+    public Level geLevelById(@PathVariable Long id){
+        return levelService.getById(id);
+    }
+
+    @PostMapping("answer")
+    public Long answer(@RequestBody LevelAnswerDto levelAnswerDto){
+        return levelService.answer(levelAnswerDto);
     }
 }
