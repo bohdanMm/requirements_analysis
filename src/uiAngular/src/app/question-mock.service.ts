@@ -21,9 +21,9 @@ export class QuestionMockService {
     {
       questionId: 248,
       questionName: 'ОС',
-      questionTask: 'Вимоги до ОС',
-      vars: ['1 вимога', '2 вимога', '3 вимога', '4 не добра вимога'],
-      results: ['1 вимога', '2 вимога', '3 вимога'],
+      questionTask: 'Користувачі Windows можуть завантажити програму, а користувачі Linux ні',
+      vars: ['Програма повинна', 'тільки для Linux', 'працювати для', 'тільки для', 'користувачів Windows'],
+      results: ['Програма повинна', 'працювати для', 'користувачів Windows'],
       isDone: false
     }
   ];
@@ -31,6 +31,10 @@ export class QuestionMockService {
   constructor() { }
 
   getQuestions(): Observable<QuestionModel[]> {
+    return of(this.questions);
+  }
+
+  getUser(opt): Observable<QuestionModel[]> {
     return of(this.questions);
   }
 }

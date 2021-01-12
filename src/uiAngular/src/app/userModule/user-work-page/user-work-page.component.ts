@@ -25,6 +25,8 @@ export class UserWorkPageComponent implements OnInit {
   spendDoneTime: number;
   donedList: number[];
 
+  tryNumber = 0;
+
 
   constructor(
     private questionServise: QuestionMockService,
@@ -34,6 +36,7 @@ export class UserWorkPageComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.tryNumber = 0;
     this.route.queryParams.subscribe( response => this.questionId = response.questionId);
     this.questionServise.getQuestions().subscribe(data => this.questionList = data);
     for (let i = 0; i < this.questionList.length; i++) {
@@ -93,12 +96,18 @@ export class UserWorkPageComponent implements OnInit {
   }
 
   calculateMark(res) {
+    this.tryNumber++;
+    console.log(this.tryNumber);
+    let tryMark = 0;
+    for (let i = 1; i < this.tryNumber; i++ ){
+      tryMark += 2;
+    }
     if (this.arraysEqual(res.answer, this.question.results)) {
       this.isDone = true;
       if (res.spendTime < 120000) {
-        this.mark = 100;
+        this.mark = 100 - tryMark;
       } else {
-        this.mark = 75;
+        this.mark = 75 - tryMark;
       }
       this.saveDone();
     } else {
@@ -118,7 +127,15 @@ export class UserWorkPageComponent implements OnInit {
 
   saveDone(){
     this.donedList = JSON.parse(localStorage.getItem('donedList'));
-    if (this.donedList){
+    let total = JSON.parse(localStorage.getItem('totalList'));
+    if (total) {
+      total[0]++;
+      localStorage.setItem('totalList', JSON.stringify(total));
+    } else {
+      total = [3];
+      localStorage.setItem('totalList', JSON.stringify(total));
+    }
+    if (this.donedList) {
       this.donedList.push(this.questionId);
       localStorage.setItem('donedList', JSON.stringify(this.donedList));
     } else {

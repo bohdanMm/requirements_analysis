@@ -18,7 +18,7 @@ export class UserQuestionListComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
-    // localStorage.clear();
+    //localStorage.clear();
     this.questionServise.getQuestions().subscribe(data => this.questionList = data);
     this.donedQuestionList = JSON.parse(localStorage.getItem('donedList'));
     console.log(this.donedQuestionList);

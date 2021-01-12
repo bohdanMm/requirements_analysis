@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
+import {QuestionMockService} from '../question-mock.service';
 
 @Component({
   selector: 'app-auth',
@@ -9,7 +10,8 @@ import {Router} from '@angular/router';
 export class AuthComponent implements OnInit {
   login = '';
   pass = '';
-  constructor(private router: Router) { }
+  f = this.loginFunc;
+  constructor(private router: Router, private service: QuestionMockService) { }
 
   ngOnInit(): void {
   }
@@ -22,6 +24,15 @@ export class AuthComponent implements OnInit {
     } else {
       alert('Дані не вірні');
     }
+  }
+
+  loginFunc(username: string, password: string) {
+    const httpOptions = {
+      headers: ({
+        'Authorization': 'Basic ' + btoa(`${username}:${password}`)
+      })
+      };
+    this.service.getUser(httpOptions).subscribe(data => this.router.navigateByUrl('/umain'));
   }
 
 }
